@@ -3,7 +3,7 @@
 # Capture full memory (1M samples) from a Rigol DS1052E.
 # Based upon
 # http://www.cibomahto.com/2010/04/controlling-a-rigol-oscilloscope-using-linux-and-python/
-# and modified to support long memory.
+# and modified to support deep memory.
 
 import os
 import time
