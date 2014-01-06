@@ -12,3 +12,6 @@ a spectrogram.  When you run the scripts, the scope is put into `SINGLE` trigger
 Once it is triggered, the waveform data is downloaded.
 Other trigger modes (e.g. `NORMAL` or `AUTO`) do not appear to work properly, even when
 acquisition is stopped before waveform download.
+
+The `save_as_wav.py` script is fun because you can plug a wire into the scope, record the
+entire AM or FM spectrum, and play it back as audio.  Sounds cool.
