@@ -48,9 +48,13 @@ class RigolScope(usbtmc):
         # which the waveform updates on the scope screen, but the download always returns the
         # same (old, never updating) waveform.  The following particular sequence of commands
         # seems to work well.  See "DS1000E-D Remote Data TX Commands.pdf".
+
+        self.write(":STOP")
         self.write(":WAV:POIN:MODE RAW")
         self.write(":ACQ:MEMD LONG")
-        self.write(":TRIG:SING:MODE")
+        trig_mode = self.ask(':TRIG:MODE?')
+        self.write(":TRIG:"+trig_mode+":SWE SING")
+
         self.write(":RUN")
         print "Waiting for trigger"
         self.waitForStop()
